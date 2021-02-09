@@ -17,7 +17,6 @@
 
 ### Dependent Components
 
-* [CSP v3.8.0](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.0)
-* [CORE v3.8.0](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.0)
+* [CSP v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)
 * [DEV_PACK v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
 
