@@ -54,9 +54,9 @@
 #include "peripheral/matrix/plib_matrix.h"
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/systick/plib_systick.h"
+#include "peripheral/flexcom/spi/master/plib_flexcom4_spi_master.h"
 #include "peripheral/flexcom/usart/plib_flexcom5_usart.h"
 #include "peripheral/flexcom/usart/plib_flexcom1_usart.h"
-#include "peripheral/flexcom/spi/plib_flexcom2_spi.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -65,6 +65,9 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* CPU clock frequency */
+#define CPU_CLOCK_FREQUENCY 100000000
 
 // *****************************************************************************
 // *****************************************************************************

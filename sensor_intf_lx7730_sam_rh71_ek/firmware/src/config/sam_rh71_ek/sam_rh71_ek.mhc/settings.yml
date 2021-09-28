@@ -5,10 +5,10 @@ frameworkPath: ..\..\..\HarmonyFrameworkWeb
 processor: ATSAMRH71F20C
 projectName: sensor_intf_lx7730_sam_rh71_ek
 settings:
-  PackageFilter: aerospace;bootloader;bootloader_apps_uart;bsp;core;core_apps_sam_rh71;crypto;crypto_apps_encrypt_decrypt;crypto_apps_large_hash;crypto_apps_speed_test;csp;csp_apps_sam_e70_s70_v70_v71;csp_apps_sam_rh71;net;quick_docs;usb;
+  PackageFilter: aerospace;bootloader;bootloader_apps_uart;bsp;core;core_apps_sam_rh71;crypto;crypto_apps_encrypt_decrypt;crypto_apps_large_hash;crypto_apps_speed_test;csp;csp_apps_sam_e70_s70_v70_v71;csp_apps_sam_rh71;dev_packs;net;net_apps_sam_e70_v71;quick_docs;usb
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAMRH71_DFP\2.1.98\samrh71c\atdf\ATSAMRH71F20C.atdf
+  DFPPath: .\dev_packs\Microchip\SAMRH71_DFP\2.3.124\samrh71c\atdf\ATSAMRH71F20C.atdf

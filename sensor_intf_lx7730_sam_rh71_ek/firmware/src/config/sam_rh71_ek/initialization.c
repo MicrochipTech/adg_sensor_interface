@@ -140,11 +140,11 @@ void SYS_Initialize ( void* data )
 	SYSTICK_TimerInitialize();
 	WDT_REGS->WDT_MR = WDT_MR_WDDIS_Msk; 		// Disable WDT 
 
+    FLEXCOM4_SPI_Initialize();
+
     FLEXCOM5_USART_Initialize();
 
     FLEXCOM1_USART_Initialize();
-
-    FLEXCOM2_SPI_Initialize();
 
 
 

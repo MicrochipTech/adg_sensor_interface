@@ -123,7 +123,28 @@ children:
       - type: User
         attributes: {value: '1'}
   - type: Integer
-    attributes: {id: FLEXCOM_SPI_CSR_SCBR_VALUE}
+    attributes: {id: FLEXCOM_SPI_CSR0_SCBR_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom5, value: '14'}
+  - type: Integer
+    attributes: {id: FLEXCOM_SPI_CSR1_SCBR_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom5, value: '14'}
+  - type: Integer
+    attributes: {id: FLEXCOM_SPI_CSR2_SCBR_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom5, value: '14'}
+  - type: Integer
+    attributes: {id: FLEXCOM_SPI_CSR3_SCBR_VALUE}
     children:
     - type: Values
       children:
@@ -206,6 +227,20 @@ children:
       children:
       - type: Dynamic
         attributes: {id: flexcom5, value: '14'}
+  - type: Boolean
+    attributes: {id: FLEXCOM_USART_FIFO_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom5, value: 'false'}
+  - type: Boolean
+    attributes: {id: FLEXCOM_USART_INTERRUPT_MODE_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom5, value: 'true'}
   - type: Integer
     attributes: {id: FLEXCOM_USART_MR_OVER}
     children:
@@ -213,6 +248,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: flexcom5, value: '1'}
+  - type: KeyValueSet
+    attributes: {id: FLEXCOM_USART_MR_USART_MODE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: KeyValueSet
     attributes: {id: FLEXCOM_USART_MR_USCLKS}
     children:
@@ -226,6 +270,35 @@ children:
       children:
       - type: User
         attributes: {value: '2'}
+  - type: KeyValueSet
+    attributes: {id: FLEXCOM_USART_OPERATING_MODE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom5, value: '2'}
+  - type: Boolean
+    attributes: {id: FLEXCOM_USART_RING_BUFFER_MODE_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom5, value: 'false'}
+  - type: Integer
+    attributes: {id: FLEXCOM_USART_TTGR}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: Integer
     attributes: {id: FLEX_USART_CLOCK_FREQ}
     children:
@@ -239,6 +312,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: flexcom5, value: '14285714'}
+  - type: Integer
+    attributes: {id: FLEX_USART_IRDA_FILTER_VAL}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom5, value: '16'}
   - type: KeyValueSet
     attributes: {id: FLEX_USART_MR_CHRL}
     children:
@@ -273,6 +353,13 @@ children:
         attributes: {id: visible}
         children:
         - {type: Value, value: 'true'}
+  - type: Integer
+    attributes: {id: FP_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom5, value: '7'}
   - type: String
     attributes: {id: RECEIVE_DATA_REGISTER}
     children:
@@ -288,23 +375,45 @@ children:
       - type: Dynamic
         attributes: {id: flexcom5, value: '&(FLEXCOM5_REGS->FLEX_US_THR)'}
   - type: Boolean
+    attributes: {id: TWI_INTERRUPT_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom5, value: 'true'}
+  - type: String
+    attributes: {id: USART_DATA_BITS}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom5, value: DRV_USART_DATA_8_BIT}
+  - type: Boolean
     attributes: {id: USART_INTERRUPT_MODE}
     children:
     - type: Attributes
       children:
+      - type: String
+        attributes: {id: label}
+        children:
+        - {type: Value, value: '---'}
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Boolean
     attributes: {id: USART_RING_BUFFER_ENABLE}
     children:
     - type: Attributes
       children:
+      - type: String
+        attributes: {id: label}
+        children:
+        - {type: Value, value: '---'}
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
 - type: Attachments
   children:
   - type: DirectCapability
@@ -326,4 +435,4 @@ children:
         children:
         - {type: Value, value: 'false'}
 - type: ElementPosition
-  attributes: {x: '18', y: '212', id: flexcom5}
+  attributes: {x: '17', y: '211', id: flexcom5}

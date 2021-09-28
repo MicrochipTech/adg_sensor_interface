@@ -211,7 +211,7 @@ static void LX7730_SPI_WriteReg(uint8_t reg, uint8_t value)
     txData = LX7730_SPI_EncodeFrame(reg, value, true);
 
     isTransferDone = false;
-    FLEXCOM2_SPI_WriteRead(&txData, 2, &rxData, 2);
+    FLEXCOM4_SPI_WriteRead(&txData, 2, &rxData, 2);
 
     //Wait end of transmission
     while (isTransferDone == false);
@@ -242,7 +242,7 @@ static bool LX7730_SPI_ReadReg(uint8_t reg, uint8_t* readData)
 
     // Write read register command
     isTransferDone = false;
-    FLEXCOM2_SPI_WriteRead(&txData, 2, &rxData, 2);
+    FLEXCOM4_SPI_WriteRead(&txData, 2, &rxData, 2);
 
     //Wait end of transmission
     while (isTransferDone == false);
@@ -252,7 +252,7 @@ static bool LX7730_SPI_ReadReg(uint8_t reg, uint8_t* readData)
     
     //Get last read register with dummy write
     isTransferDone = false;
-    FLEXCOM2_SPI_WriteRead(&txData, 2, &rxData, 2);
+    FLEXCOM4_SPI_WriteRead(&txData, 2, &rxData, 2);
     
     //Wait end of transmission
     while (isTransferDone == false);
@@ -415,7 +415,7 @@ int main ( void )
 
     SYSTICK_TimerStart();
 
-    FLEXCOM2_SPI_CallbackRegister(SPIEventHandler, (uintptr_t) 0);
+    FLEXCOM4_SPI_CallbackRegister(SPIEventHandler, (uintptr_t) 0);
   
     bool resInit = LX7730_init();
 
@@ -449,8 +449,6 @@ int main ( void )
                 {
                     if ( (data & 0x1) == 0x1)
                     {
-                        printf("Read SPI SENSORS\r\n");
-
                         // Reading Light Sensor Data
                         LX7730_ReadSensorData(LX7730_MUX_CH57, &readMsb, &readLsb);
                         appSensorLight = ((uint16_t)readMsb << 8) | readLsb;

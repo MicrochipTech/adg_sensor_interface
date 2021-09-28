@@ -1,14 +1,14 @@
 /*******************************************************************************
-  FLEXCOM2 SPI PLIB
+  FLEXCOM4 SPI PLIB
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_flexcom2_spi.h
+    plib_flexcom4_spi_master.h
 
   Summary:
-   FLEXCOM2 SPI PLIB Header File.
+   FLEXCOM4 SPI Master PLIB Header File.
 
   Description
     This file defines the interface to the FLEXCOM SPI peripheral library.
@@ -45,8 +45,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_FLEXCOM2_SPI_H // Guards against multiple inclusion
-#define PLIB_FLEXCOM2_SPI_H
+#ifndef PLIB_FLEXCOM4_SPI_MASTER_H // Guards against multiple inclusion
+#define PLIB_FLEXCOM4_SPI_MASTER_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -57,7 +57,7 @@
 */
 
 #include "device.h"
-#include "plib_flexcom_spi_local.h"
+#include "plib_flexcom_spi_master_common.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
@@ -68,15 +68,16 @@ extern "C" {
 
 // DOM-IGNORE-END
 
-/****************************** FLEXCOM2 SPI Interface *********************************/
+/****************************** FLEXCOM4 SPI Interface *********************************/
 
-void FLEXCOM2_SPI_Initialize( void );
-bool FLEXCOM2_SPI_WriteRead( void * pTransmitData, size_t txSize, void * pReceiveData, size_t rxSize );
-bool FLEXCOM2_SPI_Write( void * pTransmitData, size_t txSize );
-bool FLEXCOM2_SPI_Read( void * pReceiveData, size_t rxSize );
-bool FLEXCOM2_SPI_TransferSetup( FLEXCOM_SPI_TRANSFER_SETUP * setup, uint32_t spiSourceClock );
-bool FLEXCOM2_SPI_IsBusy( void );
-void FLEXCOM2_SPI_CallbackRegister( FLEXCOM_SPI_CALLBACK callback, uintptr_t context );
+void FLEXCOM4_SPI_Initialize( void );
+bool FLEXCOM4_SPI_WriteRead( void * pTransmitData, size_t txSize, void * pReceiveData, size_t rxSize );
+bool FLEXCOM4_SPI_Write( void * pTransmitData, size_t txSize );
+bool FLEXCOM4_SPI_Read( void * pReceiveData, size_t rxSize );
+bool FLEXCOM4_SPI_TransferSetup( FLEXCOM_SPI_TRANSFER_SETUP * setup, uint32_t spiSourceClock );
+bool FLEXCOM4_SPI_IsTransmitterBusy(void);
+bool FLEXCOM4_SPI_IsBusy( void );
+void FLEXCOM4_SPI_CallbackRegister( FLEXCOM_SPI_CALLBACK callback, uintptr_t context );
 
 /* Provide C++ Compatibility */
 #ifdef __cplusplus
@@ -85,7 +86,7 @@ void FLEXCOM2_SPI_CallbackRegister( FLEXCOM_SPI_CALLBACK callback, uintptr_t con
 
 #endif
 
-#endif // PLIB_FLEXCOM2_SPI_H
+#endif // PLIB_FLEXCOM4_SPI_MASTER_H
 
 /*******************************************************************************
  End of File
