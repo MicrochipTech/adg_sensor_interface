@@ -3,7 +3,8 @@
 
 # Sensor interface with LX7730 Example
 
-- [Sensor interface with LX7730 Example Summary](#sensor-interface-with-LX7730-summary)
+- [Sensor interface with LX7730 Example Summary](#sensor-interface-with-lx7730-example-summary)
+- [Get the Linker board and the GUI Application](#get-the-linker-board-and-the-gui-application)
 - [Building The Application](#building-the-application)
 - [MPLAB Harmony Configurations](#mplab-harmony-configurations)
 - [Hardware Setup](#hardware-setup)
@@ -16,6 +17,12 @@
 This example code runs on a SAMRH71F20-EK board to interface in between an LX7730 board and a GUI running on a computer.
 This firmware convert GUI commands received on the UART to SPI commands in order to read and write LX7730 registers.
 Several analog sensors are connected via a daughter board on the LX7730 board.
+
+---
+
+## Get the Linker board and the GUI Application
+
+Send a request at AMSTech@microsemi.com to obtain a LX7730-DB to SAMRH71F20-EK Linker board and the GUI Application that are used in this demo.
 
 ---
 
